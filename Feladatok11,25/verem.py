@@ -12,9 +12,11 @@ class Verem():
         self.kov.append(x)
 
     def kivesz(self):
-        x=str(self.kov.pop())
-        return x
-
+        if len(self.kov)==0:
+            print("A vektor ures, nem lehet kivenni")
+        else:
+            x=self.kov.pop()
+            print(x)
     def __str__(self):
         return "({})".format(self.kov)
 
@@ -35,9 +37,7 @@ def main():
             j=int(input(('Milyen szamot tegyunk be?=')))
             v.betesz(j)
         elif i==4:
-            x=v.kivesz
-            v.kivesz
-            print(x)
+            v.kivesz()       
         elif i==5:
             print(v)
         elif i==0:
